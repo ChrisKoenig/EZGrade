@@ -41,7 +41,7 @@ namespace EZGrade
             {
                 double result = (problems - i) / problems;
                 double grade = Math.Round(result * 100, 0);
-                grades.Add(new Grade((int)i, (int)grade));
+                grades.Add(new Grade(-(int)i, (int)grade));
             }
             ScoresListBox.ItemsSource = grades;
         }
