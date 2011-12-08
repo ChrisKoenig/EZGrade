@@ -7,58 +7,81 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:sys="clr-namespace:System;assembly=mscorlib"
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
                             xmlns:my="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="800"
+                            d:DesignHeight="728"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False">
-	<phone:PhoneApplicationPage.Resources>
-		<Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderThickness" Value="0"/>
-			<Setter Property="BorderBrush" Value="Transparent"/>
-			<Setter Property="Padding" Value="0"/>
-			<Setter Property="HorizontalContentAlignment" Value="Left"/>
-			<Setter Property="VerticalContentAlignment" Value="Top"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ListBoxItem">
-						<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
-							<VisualStateManager.VisualStateGroups>
-								<VisualStateGroup x:Name="CommonStates">
-									<VisualState x:Name="Normal"/>
-									<VisualState x:Name="MouseOver"/>
-									<VisualState x:Name="Disabled">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="LayoutRoot">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-											<DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentContainer"/>
-										</Storyboard>
-									</VisualState>
-								</VisualStateGroup>
-								<VisualStateGroup x:Name="SelectionStates">
-									<VisualState x:Name="Unselected"/>
-									<VisualState x:Name="Selected"/>
-									<VisualState x:Name="SelectedUnfocused"/>
-								</VisualStateGroup>
-								<VisualStateGroup x:Name="FocusStates">
-									<VisualState x:Name="Unfocused"/>
-									<VisualState x:Name="Focused"/>
-								</VisualStateGroup>
-							</VisualStateManager.VisualStateGroups>
-							<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-	</phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="ListBoxItemStyle1"
+               TargetType="ListBoxItem">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="BorderThickness"
+                    Value="0" />
+            <Setter Property="BorderBrush"
+                    Value="Transparent" />
+            <Setter Property="Padding"
+                    Value="0" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Left" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="Top" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="LayoutRoot"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver" />
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                                           Storyboard.TargetName="LayoutRoot">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{StaticResource TransparentBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimation Duration="0"
+                                                             To=".5"
+                                                             Storyboard.TargetProperty="Opacity"
+                                                             Storyboard.TargetName="ContentContainer" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected" />
+                                    <VisualState x:Name="SelectedUnfocused" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Unfocused" />
+                                    <VisualState x:Name="Focused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentControl x:Name="ContentContainer"
+                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                            Content="{TemplateBinding Content}"
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            Margin="{TemplateBinding Padding}"
+                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot"
@@ -66,105 +89,127 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <TextBlock x:Name="PageTitle"
-                   Text="EZ-Grade"
-                   Margin="9,-7,0,0"
-                   Style="{StaticResource PhoneTextTitle1Style}" />
-
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel"
-              Grid.Row="1"
-              Margin="12,0,12,0">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Text="Questions"
-                       VerticalAlignment="Center"
+        <TextBlock Text="EZGrade v1.0 by Chris Koenig" />
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,5,0,10">
+            <TextBlock Text="Scores based on "
                        FontSize="24" />
+            <TextBlock x:Name="NumberOfQuestionsTextBox"
+                       FontSize="24" />
+            <TextBlock Text=" question(s)"
+                       FontSize="24" />
+        </StackPanel>
 
-            <TextBox Name="NumberOfQuestionsTextbox"
-                     InputScope="TelephoneNumber"
-                     Grid.Column="1"
-                     Text="100" />
+        <ListBox x:Name="ScoresListBox"
+                 Grid.Row="2"
+                 ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="75"
+                          Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Rectangle Fill="{StaticResource PhoneAccentBrush}"
+                                   Grid.RowSpan="2" />
+                        <TextBlock TextAlignment="Left"
+                                   VerticalAlignment="Top"
+                                   Margin="10 5 0 0"
+                                   Text="{Binding NumberMissed}" />
+                        <TextBlock FontSize="36"
+                                   Grid.Row="1"
+                                   Margin="0 0 10 5"
+                                   TextAlignment="Center"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Bottom"
+                                   Text="{Binding GradeValue}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
 
-            <Button Content="Show"
-                    Name="ShowDataButton"
-                    Grid.Column="2"
-                    Click="ShowDataButton_Click" />
+            <ListBox.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <ScrollViewer>
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Grid>
+                </ControlTemplate>
+            </ListBox.Template>
 
-            <ListBox x:Name="ScoresListBox"
-                     Grid.Row="1"
-                     Grid.ColumnSpan="3" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <toolkit:WrapPanel />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
 
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Width="75"
-                              Margin="5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <Rectangle Fill="{StaticResource PhoneAccentBrush}"
-                                       Grid.RowSpan="2" />
-                            <TextBlock TextAlignment="Left"
-                                       VerticalAlignment="Top"
-                                       Margin="10 5 0 0"
-                                       Text="{Binding NumberMissed}" />
-                            <TextBlock FontSize="36"
-                                       Grid.Row="1"
-                                       Margin="0 0 10 5"
-                                       TextAlignment="Center"
-                                       HorizontalAlignment="Right"
-                                       VerticalAlignment="Bottom"
-                                       Text="{Binding GradeValue}" />
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
+        </ListBox>
 
-                <ListBox.Template>
-                    <ControlTemplate>
-                        <Grid>
-                            <ScrollViewer>
-                                <ItemsPresenter />
-                            </ScrollViewer>
-                        </Grid>
-                    </ControlTemplate>
-                </ListBox.Template>
-
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <toolkit:WrapPanel />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-
-            </ListBox>
-
-        </Grid>
-
-        <my:AdControl AdUnitId="10021427"
+        <my:AdControl x:Name="MyAdControl"
+                      AdUnitId="10021427"
                       ApplicationId="d2d30e8d-ab2c-4794-95e8-7fe91fd37fce"
                       Height="80"
                       Margin="0 10 0 0"
                       HorizontalAlignment="Left"
-                      Name="adControl1"
                       VerticalAlignment="Top"
-                      Grid.Row="2"
+                      Grid.Row="3"
                       Width="480" />
 
+        <Popup x:Name="SelectNumberOfQuestionsPopup"
+               Closed="SelectNumberOfQuestionsPopup_Closed"
+               IsOpen="False">
+            <Grid Width="480"
+                  Height="728"
+                  Background="{StaticResource PhoneBackgroundBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <toolkitPrimitives:LoopingSelector x:Name="NumberOfQuestions"
+                                                   HorizontalAlignment="Stretch"
+                                                   ItemSize="148, 148"
+                                                   ItemMargin="6">
+                    <toolkitPrimitives:LoopingSelector.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontSize="50" />
+                        </DataTemplate>
+                    </toolkitPrimitives:LoopingSelector.ItemTemplate>
+                </toolkitPrimitives:LoopingSelector>
+                <TextBlock FontSize="24"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           Text="Select number of questions"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10">
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+                	</TextBlock.Foreground>
+                </TextBlock>
+            </Grid>
+        </Popup>
+
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBar.Buttons>
+                <shell:ApplicationBarIconButton x:Name="SetQuestionsButton"
+                                                Click="SetQuestionsButton_Click"
+                                                IconUri="/icons/appbar.edit.rest.png"
+                                                Text="Configure" />
+            </shell:ApplicationBar.Buttons>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
